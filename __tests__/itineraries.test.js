@@ -82,13 +82,14 @@ describe('app routes', () => {
   });
   it('updates a itinerary by id', async() => {
     return request(app)
-      .patch(`/api/v1/trips/${trip._id}`)
-      .send({ name: 'Spring Break 3030' })
+      .patch(`/api/v1/itineraries/${itinerary._id}`)
+      .send({ name: 'Parl Pooty' })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          name: 'Spring Break 3030',
-          location: 'Panama City',
+          tripId: trip._id.toString(),
+          name: 'Parl Pooty',
+          latLng:'35, 40',
           __v: 0
         });
       });
@@ -96,19 +97,15 @@ describe('app routes', () => {
 
   it('deletes an itinerary by id', async() => {
     return request(app)
-      .delete(`/api/v1/trips/${trip._id}`)
+      .delete(`/api/v1/itineraries/${itinerary._id}`)
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
-          name: 'Spring Break 2020',
-          location: 'Panama City',
+          tripId: trip._id.toString(),
+          name: 'Pool Party',
+          latLng:'35, 40',
           __v: 0
         });
-
-        return Itinerary.find();
-      })
-      .then(itineraries => {
-        expect(itineraries).toHaveLength(0);
       });
   });
 });

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1576545676383" clover="3.2.0">
-  <project timestamp="1576545676383" name="All files">
-    <metrics statements="69" coveredstatements="54" conditionals="9" coveredconditionals="2" methods="26" coveredmethods="19" elements="104" coveredelements="75" complexity="0" loc="69" ncloc="69" packages="5" files="8" classes="8"/>
+<coverage generated="1576545921374" clover="3.2.0">
+  <project timestamp="1576545921374" name="All files">
+    <metrics statements="69" coveredstatements="58" conditionals="9" coveredconditionals="2" methods="26" coveredmethods="23" elements="104" coveredelements="83" complexity="0" loc="69" ncloc="69" packages="5" files="8" classes="8"/>
     <package name="lib">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.js" path="/Users/matt/alchemy/career-track/ct-lab-11-travel-manager/lib/app.js">
@@ -54,9 +54,9 @@
       </file>
     </package>
     <package name="lib.routes">
-      <metrics statements="30" coveredstatements="25" conditionals="2" coveredconditionals="1" methods="20" coveredmethods="16"/>
+      <metrics statements="30" coveredstatements="29" conditionals="2" coveredconditionals="1" methods="20" coveredmethods="20"/>
       <file name="itineraries.js" path="/Users/matt/alchemy/career-track/ct-lab-11-travel-manager/lib/routes/itineraries.js">
-        <metrics statements="13" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="6"/>
+        <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="10"/>
         <line num="1" count="2" type="stmt"/>
         <line num="2" count="2" type="stmt"/>
         <line num="4" count="2" type="stmt"/>
@@ -66,10 +66,10 @@
         <line num="15" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
-        <line num="26" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
       </file>
       <file name="trips.js" path="/Users/matt/alchemy/career-track/ct-lab-11-travel-manager/lib/routes/trips.js">
         <metrics statements="17" coveredstatements="16" conditionals="2" coveredconditionals="1" methods="10" coveredmethods="10"/>
@@ -86,10 +86,10 @@
         <line num="20" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="32" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="38" count="2" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
       </file>
     </package>
     <package name="lib.utils">
