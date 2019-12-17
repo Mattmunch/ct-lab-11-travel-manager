@@ -100,4 +100,22 @@ describe('app routes', () => {
         });
       });
   });
+
+  it('deletes a trip by id', async() => {
+    return request(app)
+      .delete(`/api/v1/trips/${trip._id}`)
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.any(String),
+          name: 'Spring Break 2020',
+          location: 'Panama City',
+          __v: 0
+        });
+
+        return Itinerary.find();
+      })
+      .then(itineraries => {
+        expect(itineraries).toHaveLength(0);
+      });
+  });
 });
