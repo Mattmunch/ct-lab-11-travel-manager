@@ -54,4 +54,37 @@ describe('app routes', () => {
         });
       });
   });
+  it('gets all trips', async() => {
+    const trips = await Trip.create([
+      { name: 'Snowboarding', location: 'Denver' },
+      { name: 'Business', location: 'Los Angeles' },
+      { name: 'Spiritual Journey', location: 'Portland' }
+    ]);
+
+    return request(app)
+      .get('/api/v1/trips')
+      .then(res => {
+        trips.forEach(trip => {
+          expect(res.body).toContainEqual({
+            _id: trip._id.toString(),
+            name: trip.name,
+            location: trip.location,
+            __v: 0
+          });
+        });
+      });
+  });
+  it('gets a trip by id', async() => {
+    return request(app)
+      .get(`/api/v1/trips/${trip._id}`)
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.any(String),
+          name: 'Spring Break 2020',
+          location: 'Panama City',
+          itineraries: JSON.parse(JSON.stringify(itineraries)),
+          __v: 0
+        });
+      });
+  });
 });

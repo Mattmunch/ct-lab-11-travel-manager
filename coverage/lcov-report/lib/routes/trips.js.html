@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">35.29% </span>
+        <span class="strong">70.59% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/17</span>
+        <span class='fraction'>12/17</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>1/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">20% </span>
+        <span class="strong">60% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>2/10</span>
+        <span class='fraction'>6/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">35.29% </span>
+        <span class="strong">70.59% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/17</span>
+        <span class='fraction'>12/17</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line low'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -102,22 +102,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,23 +145,23 @@ module.exports = Router()
       .then(trip =&gt; res.send(trip));
   })
 &nbsp;
-  .get('/', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
-    let tripQuery = <span class="cstat-no" title="statement not covered" >{};</span>
-<span class="cstat-no" title="statement not covered" >    if(req.query.ingredient) {</span>
+  .get('/', (req, res) =&gt; {
+    let tripQuery = {};
+    <span class="missing-if-branch" title="if path not taken" >I</span>if(req.query.ingredient) {
 <span class="cstat-no" title="statement not covered" >      tripQuery = { 'ingredients.name': req.query.ingredient };</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    Trip</span>
+    Trip
       .find(tripQuery)
-      .then(<span class="fstat-no" title="function not covered" >tr</span>ips =&gt; <span class="cstat-no" title="statement not covered" >res.send(trips))</span>;
+      .then(trips =&gt; res.send(trips));
   })
 &nbsp;
-  .get('/:id', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
-<span class="cstat-no" title="statement not covered" >    Promise.all([</span>
+  .get('/:id', (req, res) =&gt; {
+    Promise.all([
       Trip.findById(req.params.id),
       Itinerary.find({ tripId: req.params.id })
     ])
-      .then(<span class="fstat-no" title="function not covered" >([</span>trip, events]) =&gt; <span class="cstat-no" title="statement not covered" >res.send({ ...trip.toJSON(), events }))</span>;
+      .then(([trip, itineraries]) =&gt; res.send({ ...trip.toJSON(), itineraries }));
   })
 &nbsp;
   .patch('/:id', <span class="fstat-no" title="function not covered" >(r</span>eq, res) =&gt; {
@@ -184,7 +184,7 @@ module.exports = Router()
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 16 2019 15:41:58 GMT-0800 (Pacific Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Dec 16 2019 16:30:53 GMT-0800 (Pacific Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>
