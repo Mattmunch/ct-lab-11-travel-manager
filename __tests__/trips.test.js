@@ -87,4 +87,17 @@ describe('app routes', () => {
         });
       });
   });
+  it('updates a trip by id', async() => {
+    return request(app)
+      .patch(`/api/v1/trips/${trip._id}`)
+      .send({ name: 'Spring Break 3030' })
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.any(String),
+          name: 'Spring Break 3030',
+          location: 'Panama City',
+          __v: 0
+        });
+      });
+  });
 });
